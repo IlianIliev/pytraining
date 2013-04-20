@@ -1,0 +1,9 @@
+*.pyc
+.project
+.pydevproject
+.idea/
+
+static/*
+media/*
+local/*
+

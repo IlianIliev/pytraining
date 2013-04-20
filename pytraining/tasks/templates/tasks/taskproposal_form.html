@@ -1,0 +1,15 @@
+{% extends 'base/layout.html' %}
+
+{% block content %}
+
+    <section class="propose-a-task-form">
+        <header>
+            <h1>{% trans 'Propose a task' %}</h1>
+        </header>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" />
+        </form>
+    </section>
+{% endblock %}

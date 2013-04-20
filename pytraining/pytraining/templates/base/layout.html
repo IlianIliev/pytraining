@@ -1,0 +1,92 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="SHORTCUT ICON" type="image/x-icon" href="{{ STATIC_URL }}project_name/img/favicon.ico" />
+
+    <title>{% trans "Py Training" %} | {% block title %}{% if page_title %}{{ page_title }}{% endif %}{%endblock%}</title>
+
+    <meta name="description" content="{% block meta_description %}Default site description{% endblock %}" />
+    <meta name="author" content="Zparkl">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% addtoblock 'css' %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}pytraining/css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}pytraining/css/style.css" type="text/css">
+    {% endaddtoblock %}
+
+    {% render_block 'css' %}
+</head>
+
+{% addtoblock 'js' %}
+    <script src="{{ STATIC_URL }}pytraining/js/modernizr-2.6.2.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="{{ STATIC_URL }}pytraining/js/site.js"></script>
+{% endaddtoblock %}
+
+{% addtoblock 'js_global_vars' %}
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{ google_analytics_code }}']);
+    _gaq.push(['_setDomainName', 'example.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+{% endaddtoblock %}
+
+
+<body>
+{% block body %}
+    <div id="header" role="header">
+        <div class="wrapper">
+            <nav>
+                <a href="{% url 'home' %}" class="logo">{% trans 'Py Training - logo' %}</a>
+                <ul>
+                    <li {% if request.page == 'home' %}class="current"{% endif %}>
+                        <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+                    </li>
+                    <li {% if request.page == 'tasks' %}class="current"{% endif %}>
+                        <a href="{% url 'tasks' %}">{% trans 'Training tasks' %}</a>
+                    </li>
+                    <li {% if request.page == 'the-idea' %}class="current"{% endif %}>
+                        <a href="{% url 'page' 'the-idea' %}">{% trans 'The Idea' %}</a>
+                    </li>
+                    <li {% if request.page == 'contact' %}class="current"{% endif %}>
+                        <a href="{% url 'page' 'contact' %}">{% trans 'Contact' %}</a>
+                    </li>
+                    <li {% if request.page == 'propose-a-task' %}class="current"{% endif %}>
+                        <a href="{% url 'propose-a-task' %}">{% trans 'Propose a task' %}</a>
+                    </li>
+                    {% comment %}
+                    <li {% if request.page == 'faq' %}class="current"{% endif %}>
+                        <a href="{% url 'page' 'faq' %}">{% trans 'FAQ' %}</a>
+                    </li>
+                    {% endcomment %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+<script type="text/javascript">
+    {% render_block 'js_global_vars' %}
+</script>
+
+{% render_block 'js' %}
+
+</body>
+
+</html>

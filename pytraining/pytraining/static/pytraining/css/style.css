@@ -1,0 +1,116 @@
+html {
+    background: url('../img/az_subtle.png');
+}
+
+
+.wrapper {
+    width: 900px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#header {
+    background: #444; 
+    line-height: 50px;
+    
+}
+
+#header a {
+    color: #FFBC29;
+}
+
+.logo { float: right; }
+
+nav ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+nav li{
+    display: inline-block;
+    height: 50px;
+}
+
+nav li.current{
+    background: rgb(0, 0, 0); opacity: 0.99;
+}
+
+nav ul li a{
+    padding: 10px 15px;
+}
+
+nav a{
+    text-decoration: none;
+    font-family: "Trebuchet MS";
+}
+
+
+h1.title {
+    font: bold 3em "Trebuchet MS";
+    color: #999;
+    margin: 0.25em 0;
+}
+
+
+.task {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 1em;
+}
+
+.task h1 {
+    font-size: 1.5em;
+    margin: 0 0 0.5em 0;
+}
+
+.task h1 a{
+    text-decoration: none;
+    color: #444;
+}
+
+.task h1 a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+.task-meta ul {
+    margin: 0;
+    padding: 0;
+    color: #FFBC29;
+}
+
+.task-meta ul li {
+    display: inline-block;
+    font-size: 0.9em;
+    padding-right: 5px;
+    border-right: 1px solid #aaa;
+}
+
+hints-list, .task-meta a {
+    text-decoration: none;
+    color: #FFBC29;
+}
+
+.task-meta a:hover {
+    text-decoration: underline;
+}
+
+article.single-task {
+    margin: 30px 0;
+}
+
+.hint-control { color: #FFBC29; }
+
+.hint { display: none; }
+
+
+.propose-a-task-form label {
+    display: inline-block;
+    width: 150px;
+}
+
+.propose-a-task-form input, .propose-a-task-form textarea {
+    width: 400px;
+}

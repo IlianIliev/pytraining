@@ -1,0 +1,17 @@
+# Python packages
+gunicorn==0.15.0
+psycopg2==2.4.5
+newrelic
+
+# django packages
+Django
+South==0.7.6
+django-sekizai
+dj-database-url
+django-autoslug-field
+
+
+# debug stuff
+werkzeug
+django-extensions
+django-debug-toolbar
