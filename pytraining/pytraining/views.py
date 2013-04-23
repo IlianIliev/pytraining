@@ -3,6 +3,8 @@ from django.http import Http404
 from django.template import TemplateDoesNotExist
 from django.views.generic import TemplateView
 
+from tasks.models import Task
+
 
 class StaticPageView(TemplateView):
     """ Static Page Template View """
@@ -19,3 +21,13 @@ class StaticPageView(TemplateView):
             except TemplateDoesNotExist, e:
                 raise Http404
         return result
+
+
+class HomePageView(TemplateView):
+    """ Home page tempalte view """
+    template_name = 'pytraining/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(HomePageView, self).get_context_data(**kwargs)
+        context.update({'latest_tasks': Task.objects.order_by('-created_at')[:5]})
+        return context

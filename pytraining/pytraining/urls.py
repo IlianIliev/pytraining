@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 
-from pytraining.views import StaticPageView
+from pytraining.views import StaticPageView, HomePageView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^tasks/', include('tasks.urls')),
 
     url(r'^$',
-        StaticPageView.as_view(template_name='pytraining/home.html'),
+        HomePageView.as_view(),
         name='home'),
     url(r'^(?P<slug>[-\w]+)/$', StaticPageView.as_view(), name='page'),
 )
