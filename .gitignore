@@ -3,6 +3,8 @@
 .pydevproject
 .idea/
 
+pytraining/pytraining/settings/local.py
+
 static/*
 media/*
 local/*
