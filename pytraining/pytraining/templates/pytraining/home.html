@@ -2,11 +2,13 @@
 
 {% block content %}
     <h1>{% trans 'PyTraining' %}</h1>
-    <p>Train your skill and experience by solving simple Python tasks. To learn
-        more about the project check its <a href="{% url 'page' 'idea' %}">idea</a>.
-    </p>
+    <section class="task">
+        <p>Train your skill and experience by solving simple Python tasks. To learn
+            more about the project check its <a href="{% url 'page' 'the-idea' %}">idea</a>.
+        </p>
+    </section>
     
-    <section>
+    <section class="task">
         <h2>Latest tasks</h2>
         <ul>
         {% for task in latest_tasks %}
