@@ -9,7 +9,7 @@
 
     <link rel="SHORTCUT ICON" type="image/x-icon" href="{{ STATIC_URL }}project_name/img/favicon.ico" />
 
-    <title>{% trans "Py Training" %} | {% block title %}{% if page_title %}{{ page_title }}{% endif %}{%endblock%}</title>
+    <title>{% block 'full_title' %}{% block 'title' %}{{ page_title }}{% endblock %} | {% trans "PyTraining" %}{%endblock%}</title>
 
     <meta name="description" content="{% block meta_description %}Default site description{% endblock %}" />
     <meta name="author" content="Zparkl">
@@ -49,7 +49,7 @@
     <div id="header" role="header">
         <div class="wrapper">
             <nav>
-                <a href="{% url 'home' %}" class="logo">{% trans 'Py Training - logo' %}</a>
+                <a href="{% url 'home' %}" class="logo">{% trans 'PyTraining' %}</a>
                 <ul>
                     <li {% if request.page == 'home' %}class="current"{% endif %}>
                         <a href="{% url 'home' %}">{% trans 'Home' %}</a>
@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="wrapper">
-        {% block content %}
+        {% block 'content' %}
         {% endblock %}
     </div>
 {% endblock %}

@@ -1,7 +1,9 @@
 {% extends 'base/layout.html' %}
 
-{% block content %}
-    <h1 class="title">{% trans 'Training tasks' %}</h1>
+{% block 'title' %}{% trans 'Training Tasks' %}{% endblock %}
+
+{% block 'content' %}
+    <h1 class="title">{% trans 'Training Tasks' %}</h1>
     {% for task in tasks %}
         <section class="task">
             <header>

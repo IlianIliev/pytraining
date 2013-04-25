@@ -1,10 +1,12 @@
 {% extends 'base/layout.html' %}
 
-{% block content %}
+{% block 'title' %}{% trans 'Propose a Task' %}{% endblock %}
+
+{% block 'content' %}
 
     <section class="propose-a-task-form">
         <header>
-            <h1>{% trans 'Propose a task' %}</h1>
+            <h1>{% trans 'Propose a Task' %}</h1>
         </header>
         <form method="post">
             {% csrf_token %}

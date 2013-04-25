@@ -31,3 +31,7 @@ class ProposeTaskView(CreateView):
     model = TaskProposal
     form_class = TaskProposalForm
     success_url = reverse_lazy('page', args=('thank-you',))
+
+    def get(self, request):
+        request.page = 'propose-a-task'
+        return super(ProposeTaskView, self).get(request)

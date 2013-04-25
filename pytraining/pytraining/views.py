@@ -27,6 +27,10 @@ class HomePageView(TemplateView):
     """ Home page tempalte view """
     template_name = 'pytraining/home.html'
 
+    def get(self, request):
+        request.page = 'home'
+        return super(HomePageView, self).get(request)
+
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context.update({'latest_tasks': Task.objects.order_by('-created_at')[:5]})
