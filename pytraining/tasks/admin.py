@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from tasks.models import Task, TaskHint
+from tasks.models import Task, TaskHint, TaskProposal
 
 
 class TaskHintInline(admin.TabularInline):
@@ -13,3 +13,4 @@ admin.site.register(Task, TaskAdmin)
 
 
 admin.site.register(TaskHint)
+admin.site.register(TaskProposal)
